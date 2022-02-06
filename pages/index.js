@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
 export async function getStaticProps() {
   const baseURI = projects.baseURI
   var fetchUserGithubData = await fetch(baseURI + '/repos').then((res => {
-    if(res.statusCode < 300)
+    if(res.status < 300)
     return res.json()
   }))
 
@@ -30,7 +30,7 @@ export async function getStaticProps() {
     for(var i = 0; i < fetchUserGithubData.length; i++){
       fetchUserGithubData[i].languages = await fetch(fetchUserGithubData[i].languages_url)
                           .then(res => {
-                            if(res.statusCode < 300)
+                            if(res.status < 300)
                             return res.json()
                           },()=>{})
     }
