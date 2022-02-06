@@ -23,7 +23,6 @@ export default function Projects({ data }) {
 
     const animRef = useRef(null)
     const animate = useAnimate(animRef)
-
     return (
         <Grid direction="row-reverse" container justifyContent="center" alignItems="center" spacing={10} className={classes.cont}>
             <Grid item xs={12} lg={6}>

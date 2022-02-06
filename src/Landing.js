@@ -4,16 +4,10 @@ import Image from 'next/image'
 import data from '../resumeData.json'
 import TypedComponent from "./TypedComponent";
 import icons from "simple-icons";
-// import Icon from '@icons-pack/react-simple-icons';
-
 const { landing } = data
 
 
 const professionalDetails = landing.professionalDetails.map(({ alt, icon, link }) => {
-    // const ic = simpleIcons.get(iconify(icon)) || {
-    //     hex: '424242',
-    //     component: <Cancel color="white" fontSize={36} />
-    // }
     const ic = icons[icon]
 
     return {
