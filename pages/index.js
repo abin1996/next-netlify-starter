@@ -1,23 +1,74 @@
-import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+import React, { useCallback } from 'react';
+import { AppBar, Container, IconButton, makeStyles, Toolbar, Typography, useScrollTrigger, useTheme } from '@material-ui/core';
+import Landing from '../src/Landing';
+import Skills from '../src/Skills';
+import Projects from '../src/Project';
+import Experience from '../src/Experience';
+import About from '../src/About';
+import data from '../resumeData.json';
+import { darkTheme, lightTheme } from '../src/theme';
+import { Brightness4, Brightness7 } from '@material-ui/icons';
+const { name, projects } = data
 
-export default function Home() {
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
+  appBar: {
+    boxShadow: "none",
+  }
+}))
+
+export async function getStaticProps() {
+  const baseURI = projects.baseURI
+  const fetchUserGithubData = await fetch(baseURI + '/repos').then(res => res.json(),()=>{})
+  if(fetchUserGithubData){
+    for(var i = 0; i < fetchUserGithubData.length; i++){
+      fetchUserGithubData[i].languages = await fetch(fetchUserGithubData[i].languages_url).then(res => res.json(),()=>{})
+    }
+  }
+  
+  return {
+    props: {
+      projects: fetchUserGithubData
+    },
+    revalidate: 60
+  }
+}
+
+export default function Index({ projects, setTheme }) {
+
+  const classes = useStyles()
+
+  const trigger = useScrollTrigger({ disableHysteresis: true })
+
+  const theme = useTheme()
+
+  const toggleTheme = useCallback(() => {
+    setTheme(theme => theme.palette.type === 'dark' ? lightTheme : darkTheme)
+  }, [setTheme])
+
   return (
-    <div className="container">
-      <Head>
-        <title>Next.js Starter!</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <Header title="Welcome to my app!" />
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-      </main>
-
-      <Footer />
+    <div className={classes.root}>
+      <AppBar color={!trigger ? "transparent" : "inherit"} className={classes.appBar} position="fixed">
+        <Toolbar>
+          <Typography variant="h6" className={classes.root}>
+            { name }
+          </Typography>
+          <IconButton edge="end" color="inherit" onClick={toggleTheme}>
+            {theme.palette.type === "dark" ? <Brightness7/> : <Brightness4/>}
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+      <Toolbar className={classes.toolbar} />
+      <Container>
+        <Landing />
+        <Skills />{
+          projects && <Projects data={projects}/>
+        }
+        <Experience/>
+        <About/>
+      </Container>
     </div>
-  )
+  );
 }
