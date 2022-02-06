@@ -21,10 +21,13 @@ const useStyles = makeStyles(theme => ({
 
 export async function getStaticProps() {
   const baseURI = projects.baseURI
-  const fetchUserGithubData = await fetch(baseURI + '/repos').then(res => res.json());
-  for(var i = 0; i < fetchUserGithubData.length; i++){
-    fetchUserGithubData[i].languages = await fetch(fetchUserGithubData[i].languages_url).then(res => res.json())
+  const fetchUserGithubData = await fetch(baseURI + '/repos').then(res => res.json(),()=>{})
+  if(fetchUserGithubData){
+    for(var i = 0; i < fetchUserGithubData.length; i++){
+      fetchUserGithubData[i].languages = await fetch(fetchUserGithubData[i].languages_url).then(res => res.json(),()=>{})
+    }
   }
+  
   return {
     props: {
       projects: fetchUserGithubData
