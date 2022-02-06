@@ -1,0 +1,144 @@
+{
+    "name": "Liya Elizabeth Koshy",
+    "landing": {
+        "title": "Hi, I'm Liya",
+        "subtitles": [
+            "Research Assistant 💻⚒",
+            "Graduate Student at Purdue University 🏫",
+            "Full-stack developer 🌐"
+        ],
+        "professionalDetails": [
+            {
+                "alt": "liyakoshy",
+                "icon": "linkedin",
+                "link": "https://www.linkedin.com/in/liyakoshy/"
+            },
+            {
+                "alt": "liyaelizabethkoshy",
+                "icon": "github",
+                "link": "https://github.com/liyaelizabethkoshy"
+            },
+            {
+                "alt": "Email",
+                "icon": "gmail",
+                "link": "mailto:liyaelizabethkoshy@gmail.com,lkoshy@iu.edu"
+            }
+        ]
+    },
+    "skills": {
+        "Languages": [
+            "java",
+            "csharp",
+            "python",
+            "html5",
+            "css3",
+            "javascript",
+            "php",
+            "microsoftsqlserver"
+        ],
+        "Frontend": [
+            "angular",
+            "jquery",
+            "bootstrap"
+        ],
+        "Backend": [
+            "flask",
+            "dotnet",
+            "mysql",
+            "postgresql"
+        ]
+    },
+    "projects": {
+        "baseURI": "https://api.github.com/users/liyaelizabethkoshy",
+        "repositories": [
+            "NMT",
+            "mini-pro",
+            "refactored-succotash"
+        ]
+    },
+    "experience": {
+        "Work Experience": [
+            {
+                "organization": "IUPUI Industrial Assessment Center",
+                "role": "Research Assistant",
+                "type": "Full time",
+                "startDate": "2021-09-01",
+                "endDate": "",
+                "city": "Bangalore",
+                "state": "Karnataka",
+                "country": "India",
+                "url": "https://www.linkedin.com/company/tata-consultancy-services/",
+                "thumbnail": "/iupui.jfif"
+            },
+            {
+                "organization": "Tata Consultancy Services",
+                "role": "System Engineer",
+                "type": "Full time",
+                "startDate": "2018-09-01",
+                "endDate": "2021-08-01",
+                "city": "Bangalore",
+                "state": "Karnataka",
+                "country": "India",
+                "url": "https://www.linkedin.com/company/tata-consultancy-services/",
+                "thumbnail": "/TCS-Logo.png"
+            },
+            {
+                "organization": "Tata Consultancy Services",
+                "role": "Intern",
+                "type": "Internship",
+                "startDate": "2017-05-01",
+                "endDate": "2017-08-01",
+                "city": "Kochi",
+                "state": "Kerala",
+                "country": "India",
+                "url": "https://www.linkedin.com/company/tata-consultancy-services/",
+                "thumbnail": "/TCS-Logo.png"
+            }
+        ],
+        "Volunteer Experience": [
+            {
+                "organization": "YMCA Bodhinilayam School",
+                "role": "Teaching Assistant",
+                "type": "Member",
+                "startDate": "2015-06-01",
+                "endDate": "2015-07-01",
+                "city": "Kottayam",
+                "state": "Kerala",
+                "country": "India",
+                "url": "https://m.facebook.com/groups/489912044967439/",
+                "thumbnail": "/YMCA.jpg"
+            }
+        ]
+    },
+    "about": {
+        "description": "I have been a Software Engineer for 3 years and following that passion, I research on innovative topics at the Purdue School of Engineering, IUPUI alongside my masters degree in Electrical and Computer Engineering",
+        "picture": "/lkoshy.jfif",
+        "social": [
+            {
+                "alt": "liyaelizabethkoshy",
+                "icon": "instagram",
+                "link": "https://www.instagram.com/liyaelizabethkoshy"
+            }
+        ]
+    },
+    "theme": {
+        "light": {
+            "palette": {
+                "type": "light",
+                "background": {
+                    "paper": "#fff",
+                    "default": "#fafafa"
+                }
+            }
+        },
+        "dark": {
+            "palette": {
+                "type": "dark",
+                "background": {
+                    "paper": "#303030",
+                    "default": "#212121"
+                }
+            }
+        }
+    }
+}
