@@ -63,7 +63,7 @@
                 "role": "Research Assistant",
                 "type": "Full time",
                 "startDate": "2021-09-01",
-                "endDate": "",
+                "endDate": "Present",
                 "city": "Bangalore",
                 "state": "Karnataka",
                 "country": "India",
@@ -107,6 +107,18 @@
                 "country": "India",
                 "url": "https://m.facebook.com/groups/489912044967439/",
                 "thumbnail": "/YMCA.jpg"
+            },
+            {
+                "organization": "YWCA",
+                "role": "Karate Student",
+                "type": "Black Belt",
+                "startDate": "2010-06-01",
+                "endDate": "2020-07-01",
+                "city": "Kottayam",
+                "state": "Kerala",
+                "country": "India",
+                "url": "https://m.facebook.com/groups/489912044967439/",
+                "thumbnail": "/ywca.png"
             }
         ]
     },
