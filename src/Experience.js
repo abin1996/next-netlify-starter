@@ -1,6 +1,6 @@
 import { Avatar, Card, CardActionArea, CardHeader, Fade, Grid, Hidden, makeStyles, Typography, useMediaQuery, useTheme } from "@material-ui/core";
 import Image from 'next/image'
-import { DateRange, LocationCity } from '@material-ui/icons';
+import { DateRange, LocationOn } from '@material-ui/icons';
 import data from '../resumeData.json'
 import { useRef } from "react";
 import useAnimate from "./useAnimate";
@@ -110,6 +110,7 @@ export default function Experience() {
                                         url,
                                         thumbnail
                                     }, i) =>  <Grid item xs={12} sm key={i}>
+                                        <Fade in={true} style={{ transitionDelay: `${200 * i}ms` }}>
                                                 <Card className={classes.card}>
                                                     <CardActionArea
                                                         className={classes.cardActionArea}
@@ -137,12 +138,13 @@ export default function Experience() {
                                                             className={classes.cardHeader}
                                                         />
                                                         <CardHeader
-                                                            avatar={<LocationCity />}
+                                                            avatar={<LocationOn />}
                                                             subheader={`${city}, ${state}, ${country}`}
                                                             className={classes.cardHeader}
                                                         />
                                                     </CardActionArea>
                                                 </Card>
+                                                </Fade>
                                         </Grid>
                                     )
                                 }
