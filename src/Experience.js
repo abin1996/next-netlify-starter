@@ -27,7 +27,12 @@ const useStyles = makeStyles(theme => ({
 const getHumanDiff = (startDate, endDate) => {
     let str = ""
     const start = new Date(startDate)
-    const end = !!endDate ? new Date(endDate) : new Date()
+    var end 
+    if(!!endDate || endDate=="Present" ){
+        end = new Date()
+    } else {
+        end = new Date(endDate)
+    }
     let years = end.getFullYear() - start.getFullYear()
     let months = end.getMonth() - start.getMonth()
 
@@ -104,9 +109,7 @@ export default function Experience() {
                                         country,
                                         url,
                                         thumbnail
-                                    }, i) =>
-                                        <Grid item xs={12} sm key={i}>
-                                            <Fade in={animate} style={{ transitionDelay: `${200 * i}ms` }}>
+                                    }, i) =>  <Grid item xs={12} sm key={i}>
                                                 <Card className={classes.card}>
                                                     <CardActionArea
                                                         className={classes.cardActionArea}
@@ -140,7 +143,6 @@ export default function Experience() {
                                                         />
                                                     </CardActionArea>
                                                 </Card>
-                                            </Fade>
                                         </Grid>
                                     )
                                 }
